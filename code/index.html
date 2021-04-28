@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>CODEGEN</title>
+        <style>
+            #content {font-family: Consolas, Monaco, monospace;}
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <p>ORGN: <input type="password" v-model="ORG"/></p>
+            <p>CCID: <input type="text" v-model="CCID"/></p>
+            <p>CODE: <span>{{ getCODE | upercase }}</span></p>
+            <p>CODE: <span>{{ getCODE | upercase | addspace }}</span></p>
+        </div>
+        <script src="vue.min.js"></script>
+        <script src="md5.min.js"></script>
+        <script src="sha1.min.js"></script>
+        <script>
+        new Vue({
+            el: '#content',
+            data: {
+                ORG: '',
+                CCID: ''
+            },
+            computed: {
+                getCODE: function () {
+                    return md5(this.ORG+this.CCID+sha1(this.ORG+this.CCID)).substr(0,16)
+                }
+            },filters: {
+                upercase: function (value) {
+                    return value.substr(0,4).toUpperCase()+value.substr(4,4)+value.substr(8,4).toUpperCase()+value.substr(12,4)
+                },
+                addspace: function (value) {
+                    return value.substr(0,4)+" "+value.substr(4,4)+" "+value.substr(8,4)+" "+value.substr(12,4)
+                }
+            }
+        })
+        </script>
+    </body>
+</html>
