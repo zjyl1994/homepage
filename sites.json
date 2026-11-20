@@ -1,0 +1,20 @@
+[
+    {
+        "id": "blog",
+        "title": "Blog",
+        "url": "https://blog.zjyl1994.com/",
+        "icon": "blog",
+        "featured": true,
+        "order": 1,
+        "enabled": true
+    },
+    {
+        "id": "github",
+        "title": "GitHub",
+        "url": "https://github.com/zjyl1994",
+        "icon": "github",
+        "featured": true,
+        "order": 2,
+        "enabled": true
+    }
+]

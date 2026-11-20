@@ -1,0 +1,15 @@
+{
+  "name": "zjyl1994-homepage",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.17.0",
+  "scripts": {
+    "sync:links": "node sync-links.js",
+    "dev": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
+}
